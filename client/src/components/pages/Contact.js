@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '/Users/danielle/bootcamp/react-portfolio-w20/src/styles/all.css';
+import '../src/styles/all.css';
 
 // Here we import a helper function that will check if the email is valid
 import { validateEmail } from '../../utils/helpers';
