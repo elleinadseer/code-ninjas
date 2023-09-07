@@ -51,6 +51,7 @@ const thoughtController = {
 
   // update thought 
   async updateThought(req, res) {
+    try {
     const dbThoughtData = await Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $set: req.body },
@@ -61,10 +62,11 @@ const thoughtController = {
       return res.status(404).json({ message: 'No thought accessed with this id '});
     }
 
-    res.json(dbThoughtData);
-
+    res.json({message: 'Thought successfully made!'});
+  } catch (err) {
     res.status(500).json(err);
-  },
+  }
+},
 
   // delete thought based on ID
   async deleteThought(req, res) {
